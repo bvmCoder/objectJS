@@ -98,7 +98,7 @@
     var Task = function Task(name) {
         this.name = name;
         this.completed = false;
-    }
+    };
 
     Task.prototype.complete = function complete() {
         console.log('Completing Task: ' + this.name);
@@ -108,16 +108,23 @@
         console.log('Saving Task ' + this.name);
     };
 
-    var taskOne = new Task('Create a demo for constructors');
-    var taskTwo = new Task('Create a demo for modules');
-    var taskThree = new Task('Create a demo for singltons');
-    var taskFour = new Task('Create a demo for prototypes');
+    var taskOne = new Task('Create a demo for Constructors'),
+        taskTwo = new Task('Create a demo for Modules'),
+        taskThree = new Task('Create a demo for Singltons'),
+        taskFour = new Task('Create a demo for Prototypes');
     console.log(taskOne);
+    console.log(taskOne.__proto__)
     console.log(taskTwo);
+    console.log(taskTwo.__proto__)
     console.log(taskThree);
+    console.log(taskThree.__proto__)
     console.log(taskFour);
+    console.log(taskFour.__proto__)
+    console.log(taskTwo.__proto__ === taskThree.__proto__);
 
     taskOne.complete();
     taskTwo.save();
+    taskThree.save();
+    taskFour.save();
 
 })();
