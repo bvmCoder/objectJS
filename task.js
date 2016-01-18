@@ -31,7 +31,9 @@
 	it will show up or it won't show up
 	configurable: means I am not allowed to change the configuration of these 
 	iteams, so once I set it I am not allowed to set it to something different
-
+	
+	Creational Design Pattern: Used to Construct New Objects
+	Adapting Creation to the Situation
     */
     var task = Object.create(Object.prototype);
 
@@ -45,10 +47,23 @@
         value: function toString() {
             return this.title + ' ' + this.descrption;
         },
+        writable: false, // false to prevent to override this property later
+        enumerable: false, // false will not show up this key from an Object
+        configurable: false // false
+    });
+
+    var urgentTask = Object.create(task);
+    Object.defineProperty(urgentTask, 'toString', {
+        value: function toString() {
+            return this.title + ' is urgent!';
+        },
         writable: true, // false to prevent to override this property later
         enumerable: true, // false will not show up this key from an Object
         configurable: true // false
     });
+
+    console.log(urgentTask.toString());
+
     //task.toString = 'Patel'; // toString is no longer a function
 
     /*
