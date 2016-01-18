@@ -1,8 +1,6 @@
 (function() {
     "use strict";
-
-
-    //var task = {};
+    //var task = {};  create a new object
     var task = Object.create(Object.prototype);
 
     task.title = 'My Task';
