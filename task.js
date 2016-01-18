@@ -25,6 +25,13 @@
 
 	Defining Properties
 	ECMAScript 5 introduces defineProperty
+	allows to configure property name and set the value
+	writable: which means I can create constant something that can't be change
+	enumerable: means either in for in loop or if I do the keys function then 
+	it will show up or it won't show up
+	configurable: means I am not allowed to change the configuration of these 
+	iteams, so once I set it I am not allowed to set it to something different
+
     */
     var task = Object.create(Object.prototype);
 
