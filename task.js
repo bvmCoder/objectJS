@@ -46,10 +46,18 @@
             return this.title + ' ' + this.descrption;
         },
         writable: true, // false to prevent to override this property later
-        enumerable: true,
-        configurable: true
+        enumerable: true, // false will not show up this key from an Object
+        configurable: true // false
     });
     //task.toString = 'Patel'; // toString is no longer a function
+
+    /*
+	Later we can change it if configurable is true 
+	can't Redefine property if configurable is set to false
+    Object.defineProperty(task, 'toString', {
+        enumerable: false
+    });*/
+    console.log(Object.keys(task)); // ['title', 'description', 'toString']
 
     console.log(task.toString());
 
