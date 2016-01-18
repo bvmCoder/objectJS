@@ -1,6 +1,15 @@
 (function() {
     "use strict";
-    //var task = {};  create a new object
+    /* Run this using node
+    Three ways to create an Object
+    var task = {};  create a new object
+
+    var obj = {};
+    obj.param = 'New Value';
+    obj['newParam'] = 'Old Value';
+    console.log(obj['newParam']);
+	// you can use bracket notation using variable
+    */
     var task = Object.create(Object.prototype);
 
     task.title = 'My Task';
