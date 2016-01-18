@@ -38,17 +38,18 @@
     task.title = 'My Task';
     task.description = 'My Description';
     console.log(task.title);
+    /*task.toString = function toString() {
+        return this.title + ' ' + this.descrption;
+    };*/
     Object.defineProperty(task, 'toString', {
         value: function toString() {
             return this.title + ' ' + this.descrption;
         },
-        writable: true,
+        writable: true, // false to prevent to override this property later
         enumerable: true,
         configurable: true
     });
-    /*task.toString = function toString() {
-        return this.title + ' ' + this.descrption;
-    };*/
+    //task.toString = 'Patel'; // toString is no longer a function
 
     console.log(task.toString());
 
