@@ -34,6 +34,13 @@
 	
 	Creational Design Pattern: Used to Construct New Objects
 	Adapting Creation to the Situation
+
+	Used to create new objects with their own object scope
+	The new Keyword and create a constructor function
+	Creates a Brand New Object
+	Links to an object prototype
+	Binds `this` keyword to the new object scope
+	Implicitly return `this` 
     */
     var task = Object.create(Object.prototype);
 
