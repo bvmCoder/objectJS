@@ -9,11 +9,28 @@
     obj['newParam'] = 'Old Value';
     console.log(obj['newParam']);
 	// you can use bracket notation using variable
+	var task = {};
+	var task = new Object();
+	var task = {
+		title: 'My Title',
+		description: 'My Description'
+	};
+
+	Object.defineProperty(obj, 'name', {
+		value: 'My Name',
+		writable: true,
+		enumerable: true,
+		configurable: true
+	});
+
+	Defining Properties
+	ECMAScript 5 introduces defineProperty
     */
     var task = Object.create(Object.prototype);
 
     task.title = 'My Task';
     task.description = 'My Description';
+    console.log(task.title);
     Object.defineProperty(task, 'toString', {
         value: function toString() {
             return this.title + ' ' + this.descrption;
@@ -25,7 +42,7 @@
     /*task.toString = function toString() {
         return this.title + ' ' + this.descrption;
     };*/
-    console.log(task.title);
+
     console.log(task.toString());
 
     // constuctor design pattern
@@ -33,7 +50,6 @@
     var Task = function Task(name) {
         this.name = name;
         this.completed = false;
-
     }
 
     Task.prototype.complete = function complete() {
