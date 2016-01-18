@@ -85,6 +85,16 @@
 
     // constuctor design pattern
 
+    function ObjectName(param1, param2) {
+        this.param1 = param1;
+        this.param2 = param2;
+        this.toString = function toString() {
+            return this.param1 + ' ' + this.param2;
+        };
+
+        // return `this` the entire object implicitly with the new keyword
+    }
+
     var Task = function Task(name) {
         this.name = name;
         this.completed = false;
