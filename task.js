@@ -108,6 +108,8 @@
         console.log('Saving Task ' + this.name);
     };
 
+    module.exports = Task;
+
     // Prototype is An encapsulation of properties that an object links to
 
     var taskOne = new Task('Create a demo for Constructors'),
